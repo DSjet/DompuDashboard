@@ -1,8 +1,21 @@
-import withSerwistInit from "@serwist/next";
+import {
+  PHASE_DEVELOPMENT_SERVER,
+  PHASE_PRODUCTION_BUILD,
+} from "next/constants.js";
 
-const withSerwist = withSerwistInit({
-  swSrc: "app/sw.ts",
-  swDest: "public/sw.js",
-});
+/** @type {import("next").NextConfig} */
+const nextConfig = {
+  reactStrictMode: true,
+};
 
-export default withSerwist({});
+const nextConfigFunction = async (phase) => {
+  if (phase === PHASE_DEVELOPMENT_SERVER || phase === PHASE_PRODUCTION_BUILD) {
+    const withPWA = (await import("@ducanh2912/next-pwa")).default({
+      dest: "public",
+    });
+    return withPWA(nextConfig);
+  }
+  return nextConfig;
+};
+
+export default nextConfigFunction;

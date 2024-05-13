@@ -3,6 +3,8 @@ import { ReactNode } from "react";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
+import Navbar from "./components/navbar/navbar";
+
 const inter = Inter({ subsets: ["latin"] });
 
 const APP_NAME = "PWA App";
@@ -44,14 +46,17 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#FFFFFF",
+  themeColor: "#000",
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" dir="ltr">
       <head />
-      <body>{children}</body>
+      <body>
+        {children}
+        <Navbar />
+      </body>
     </html>
   );
 }

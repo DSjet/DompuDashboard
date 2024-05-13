@@ -1,11 +1,16 @@
 {
-    "name": "My Awesome PWA app",
+    "name": "My awesome PWA app",
     "short_name": "PWA App",
     "icons": [{
             "src": "/icons/android-chrome-192x192.png",
             "sizes": "192x192",
             "type": "image/png",
-            "purpose": "maskable"
+            "purpose": "any maskable"
+        },
+        {
+            "src": "/icons/android-chrome-384x384.png",
+            "sizes": "384x384",
+            "type": "image/png"
         },
         {
             "src": "/icons/icon-512x512.png",
