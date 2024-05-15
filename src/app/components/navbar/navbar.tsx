@@ -24,7 +24,7 @@ const Navbar: React.FC = () => {
               width={40}
               height={40}
             />
-            <small>Beranda</small>
+            <small>Pemasukan</small>
           </Link>
         </li>
         <li className="bg-primary rounded-full p-4">
@@ -45,7 +45,7 @@ const Navbar: React.FC = () => {
               width={40}
               height={40}
             />
-            <small>Beranda</small>
+            <small>Pengeluaran</small>
           </Link>
         </li>
         <li>
@@ -56,7 +56,7 @@ const Navbar: React.FC = () => {
               width={40}
               height={40}
             />
-            <small>Beranda</small>
+            <small>Profil</small>
           </Link>
         </li>
       </ul>
