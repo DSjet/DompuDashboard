@@ -1,5 +1,5 @@
 import { FormEvent, useState } from "react";
-import { db, auth } from "../../../../utlis/firebaseConfig";
+import { db, auth } from "../../../../utils/firebaseConfig";
 import { updateDoc, doc } from "@firebase/firestore";
 import Overlay from "../overlay/overlay";
 

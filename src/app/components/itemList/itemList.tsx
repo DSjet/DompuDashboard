@@ -10,7 +10,7 @@ import {
 } from "firebase/firestore";
 import { useEffect, useState } from "react";
 
-import { db } from "../../../../utlis/firebaseConfig";
+import { db } from "../../../../utils/firebaseConfig";
 import EditForm from "../editForm/editForm";
 
 interface ItemBoxProps {
@@ -51,21 +51,26 @@ const ItemBox: React.FC<ItemBoxProps> = ({
   };
 
   return (
-    <div className="w-full mx-5 px-2 rounded-lg flex drop-shadow-lg justify-between">
-      <h1>{name}</h1>
-      <div className="flex" onClick={() => setShowModal(true)}>
-        <p>
-          {quantity} {unit}
-        </p>
-        <Image
-          className="ml-5"
-          src="images/icons/CaretRight.svg"
-          alt="home icon"
-          width={15}
-          height={15}
-        />
+    <div className="w-full px-5 rounded-lg flex drop-shadow-lg justify-between">
+      <div className="flex justify-between w-full">
+        <div className="flex items-center">
+          <div className="w-3 h-3 bg-primary-0 rounded-full mr-5"></div>
+          <h1 className="text-base font-medium">{name}</h1>
+        </div>
+        <div className="flex" onClick={() => setShowModal(true)}>
+          <p className="text-sm">
+            {quantity} {unit}
+          </p>
+          <Image
+            className="ml-5"
+            src="images/icons/CaretRight.svg"
+            alt="home icon"
+            width={10}
+            height={10}
+          />
+        </div>
       </div>
-      <div className="" onClick={() => deleteItem()}>
+      <div className="hidden" onClick={() => deleteItem()}>
         <Image
           src="images/icons/Trash.svg"
           alt="home icon"
@@ -73,6 +78,7 @@ const ItemBox: React.FC<ItemBoxProps> = ({
           height={20}
         />
       </div>
+      <hr />
     </div>
   );
 };
@@ -118,7 +124,7 @@ const ItemList: React.FC = () => {
       <div className="w-full flex flex-wrap items-center justify-center">
         {items.map((item) => (
           <div
-            className=""
+            className="w-full"
             onClick={() =>
               setActiveItem({
                 id: item.id,
