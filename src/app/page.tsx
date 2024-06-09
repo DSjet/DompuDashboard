@@ -5,6 +5,8 @@ import { useRouter } from "next/navigation";
 import { app } from "../../utlis/firebaseConfig";
 import Image from "next/image";
 
+import ItemList from "./components/itemList/itemList";
+
 export default function Home() {
   const auth = getAuth(app);
   const router = useRouter();
@@ -34,6 +36,7 @@ export default function Home() {
   return (
     <main>
       <Image src="/images/nextjs.png" alt="Next.js" width={200} height={200} />
+      <ItemList />
       <h1>Next.js + TypeScript + Tailwind CSS</h1>
       <p>This is a Next.js + TypeScript + Tailwind CSS template.</p>
 

@@ -1,8 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { app } from "../../../utlis/firebaseConfig";
-import { getAuth } from "firebase/auth";
+import { auth } from "../../../utlis/firebaseConfig";
 import { useRouter } from "next/navigation";
 import { signInWithPopup, GoogleAuthProvider, User } from "firebase/auth";
 
@@ -11,7 +10,6 @@ export default function Masuk() {
   const router = useRouter();
 
   useEffect(() => {
-    const auth = getAuth(app);
     const unsubscribe = auth.onAuthStateChanged((user) => {
       if (user) {
         setUser(user);
@@ -24,7 +22,6 @@ export default function Masuk() {
   }, []);
 
   const signInWithGoogle = async () => {
-    const auth = getAuth(app);
     const provider = new GoogleAuthProvider();
     try {
       await signInWithPopup(auth, provider);
