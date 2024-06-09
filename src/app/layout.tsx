@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 
 import Navbar from "./components/navbar/navbar";
+import Header from "./components/header/header";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -53,7 +54,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" dir="ltr">
       <head />
-      <body className="min-h-[100vh]">
+      <body className={`${inter.className} min-h-[100vh] text-blue-800`}>
+        <Header />
         {children}
         <Navbar />
       </body>

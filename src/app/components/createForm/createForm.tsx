@@ -1,7 +1,10 @@
 import { FormEvent } from "react";
-import { db, auth } from "../../../../utlis/firebaseConfig";
+import { db, auth } from "../../../../utils/firebaseConfig";
 import { addDoc, collection } from "@firebase/firestore";
 import Overlay from "../overlay/overlay";
+import Button from "../button/button";
+import Input from "../input/input";
+import Image from "next/image";
 
 interface CreateFormProps {
   setShowModal: (show: boolean) => void;
@@ -34,33 +37,60 @@ const CreateForm: React.FC<CreateFormProps> = ({ setShowModal }) => {
   };
 
   return (
-    <div className="">
+    <div className="w-full">
       <Overlay setShowModal={setShowModal} />
-      <div className="absolute h-full top-[50%] left-[50%] translate-x-[-50%]">
-        <div className="w-full flex items-center justify-center">
-          <form
-            className="w-full flex flex-col items-center justify-center"
-            onSubmit={onSubmit}
-          >
-            <input
+      <div className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] w-full px-5">
+        <div className=" bg-white rounded-lg w-full p-5">
+          <div className="flex justify-between items-center mb-3">
+            <div className="outline outline-1 outline-gray-300 p-2 rounded-lg">
+              <Image
+                src="/images/icons/Arhive_fill.svg"
+                alt="add icon"
+                width={20}
+                height={20}
+              />
+            </div>
+            <div className="cursor-pointer" onClick={() => setShowModal(false)}>
+              <Image
+                src="/images/icons/X.svg"
+                alt="close icon"
+                width={20}
+                height={20}
+              />
+            </div>
+          </div>
+          <form className="w-full" onSubmit={onSubmit}>
+            <div className="text-md font-semibold">Tambahkan Komoditas</div>
+            <p className="text-gray-600 leading-5 text-sm mb-4">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Vestibulum ac lobortis lacus, et condimentum diam.{" "}
+            </p>
+
+            <Input
               name="name"
               type="text"
-              className=" border-2 border-gray-300 rounded-full py-2 px-4"
-              placeholder="Nama komoditas"
+              className="my-2"
+              placeholder="Nama"
             />
-            <input
+            <Input
               name="quantity"
               type="text"
-              className="border-2 border-gray-300 rounded-full py-2 px-4"
-              placeholder="Jumlah komoditas"
+              className="my-2"
+              placeholder="Jumlah"
             />
-            <input
+            <Input
               name="unit"
               type="text"
-              className="border-2 border-gray-300 rounded-full py-2 px-4"
+              className="my-2"
               placeholder="Satuan"
             />
-            <button className=" bg-primary rounded-full p-4">Tambahkan</button>
+            <Button text="Tambahkan" type="submit" className="my-2" />
+            <Button
+              text="Batal"
+              className="my-2"
+              variation="secondary"
+              onClick={() => setShowModal(false)}
+            />
           </form>
         </div>
       </div>

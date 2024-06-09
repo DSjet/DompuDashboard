@@ -25,9 +25,9 @@ const Navbar: React.FC = () => {
             </Link>
           </li>
           <li>
-            <Link href="/">
+            <Link href="/pemasukan">
               <Image
-                src="images/icons/home.svg"
+                src="images/icons/Money.svg"
                 alt="home icon"
                 width={40}
                 height={40}
@@ -35,7 +35,7 @@ const Navbar: React.FC = () => {
               <small>Pemasukan</small>
             </Link>
           </li>
-          <li className="bg-primary rounded-full p-4">
+          <li className="bg-primary-0 rounded-full p-3">
             <Image
               src="images/icons/plus.svg"
               alt="home icon"
@@ -45,9 +45,9 @@ const Navbar: React.FC = () => {
             />
           </li>
           <li>
-            <Link href="/">
+            <Link href="pengeluaran">
               <Image
-                src="images/icons/home.svg"
+                src="images/icons/Paper.svg"
                 alt="home icon"
                 width={40}
                 height={40}
@@ -56,9 +56,9 @@ const Navbar: React.FC = () => {
             </Link>
           </li>
           <li>
-            <Link href="/">
+            <Link href="/profil">
               <Image
-                src="images/icons/home.svg"
+                src="images/icons/User_alt.svg"
                 alt="home icon"
                 width={40}
                 height={40}
