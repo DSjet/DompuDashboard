@@ -1,22 +1,21 @@
-"use client";
+"use client"
 
-import * as React from "react";
-import { Map, FullscreenControl } from "react-map-gl";
+import * as React from 'react';
+import Map from 'react-map-gl';
 
 function App() {
   return (
-    <div className="h-screen">
-      <Map
-        mapboxAccessToken={process.env.NEXT_PUBLIC_MAPBOX_API}
-        initialViewState={{
-          longitude: 100.305642,
-          latitude: 0.902049,
-          zoom: 14,
-        }}
-        mapStyle="mapbox://styles/mapbox/streets-v9"
-      >
-        <FullscreenControl />
-      </Map>
+    <div>
+    <Map
+      mapboxAccessToken="mapbox token"
+      initialViewState={{
+        longitude: -122.4,
+        latitude: 37.8,
+        zoom: 14
+      }}
+      style={{width: 600, height: 400}}
+      mapStyle="mapbox://styles/mapbox/streets-v9"
+    />
     </div>
   );
 }
