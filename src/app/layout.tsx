@@ -53,7 +53,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" dir="ltr">
       <head />
-      <body>
+      <body className="min-h-[100vh]">
         {children}
         <Navbar />
       </body>
